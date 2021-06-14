@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="df_style_for_all_reports" model="report.template.settings">
+            <field name="name">Default style</field>
+        </record>
+
+        <record id="100_miles_reports_style" model="report.template.settings">
+            <field name="name">100 Miles</field>
+            <field name="template_inv" ref="professional_templates.INVOICE_13_document"/>
+            <field name="template_so" ref="professional_templates.SO_13_document"/>
+            <field name="template_po" ref="professional_templates.PO_10_document"/>
+            <field name="template_rfq" ref="professional_templates.RFQ_10_document"/>
+            <field name="template_dn" ref="professional_templates.DN_10_document"/>
+            <field name="template_pk" ref="professional_templates.PICK_10_document"/>
+            <field name="odd" eval="'#F2F2F2'"/>
+            <field name="even" eval="'#FFFFFF'"/>
+            <field name="theme_color" eval="'#045c9c'"/>
+            <field name="text_color" eval="'#6B6C6C'"/>
+            <field name="name_color" eval="'#10437c'"/>
+            <field name="cust_color" eval="'#10437c'"/>
+            <field name="theme_txt_color" eval="'#FFFFFF'"/>
+            <field name="header_font" eval="'11'"/>
+            <field name="body_font" eval="'14'"/>
+            <field name="footer_font" eval="'10'"/>
+            <field name="font_family" eval="'sans-serif'"/>
+            <field name="aiw_report" eval="False"/>
+            <field name="show_img" eval="False"/>
+            <field name="show_footer_logo" eval="True"/>
+            <field name="transparent" eval="False"/>
+            <field name="footer" eval="True"/>
+            <field name="header" eval="True"/>
+            <field name="leftpadding" eval="15"/>
+            <field name="toppadding" eval="300"/>
+            <field name="wm_color" eval="'#5A5B5C'"/>
+            <field name="rotate" eval="'0'"/>
+            <field name="watermark" eval="''"/>
+            <field name="opacity" eval="'0.5'"/>
+            <field name="fontsize" eval="'96'"/>
+        </record>
+
+        <record id="100_miles_india_reports_style" model="report.template.settings">
+            <field name="name">100 Miles India</field>
+            <field name="template_inv" ref="professional_templates.INVOICE_13_document"/>
+            <field name="template_so" ref="professional_templates.SO_13_document"/>
+            <field name="template_po" ref="professional_templates.PO_1_document"/>
+            <field name="template_rfq" ref="professional_templates.RFQ_1_document"/>
+            <field name="template_dn" ref="professional_templates.DN_1_document"/>
+            <field name="template_pk" ref="professional_templates.PICK_1_document"/>
+            <field name="odd" eval="'#F2F2F2'"/>
+            <field name="even" eval="'#FFFFFF'"/>
+            <field name="theme_color" eval="'#045c9c'"/>
+            <field name="text_color" eval="'#6B6C6C'"/>
+            <field name="name_color" eval="'#10437c'"/>
+            <field name="cust_color" eval="'#10437c'"/>
+            <field name="theme_txt_color" eval="'#FFFFFF'"/>
+            <field name="header_font" eval="'11'"/>
+            <field name="body_font" eval="'14'"/>
+            <field name="footer_font" eval="'14'"/>
+            <field name="font_family" eval="'sans-serif'"/>
+            <field name="aiw_report" eval="False"/>
+            <field name="show_img" eval="False"/>
+            <field name="show_footer_logo" eval="True"/>
+            <field name="transparent" eval="False"/>
+            <field name="footer" eval="True"/>
+            <field name="header" eval="True"/>
+            <field name="leftpadding" eval="15"/>
+            <field name="toppadding" eval="1000"/>
+            <field name="wm_color" eval="'#5A5B5C'"/>
+            <field name="rotate" eval="'0'"/>
+            <field name="opacity" eval="'0.5'"/>
+            <field name="watermark" eval="''"/>
+            <field name="fontsize" eval="'96'"/>
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="df_style" ref="professional_templates.df_style_for_all_reports"/>
+        </record>
+    </data>
+</odoo>
