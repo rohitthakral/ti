@@ -16,12 +16,33 @@
 							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
 						</span>
 					</div>
-					<div class="col-4 text-center" style="padding-left:0px;">
+					<!-- <div class="col-4 text-center" style="padding-left:0px;">
 						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
 					</div>
 					<div class="col-4 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
 						<div class="float-right" style="width:auto;padding-left:15px;">
 							<t t-call="professional_templates.company_address"/>
+						</div>
+					</div> -->
+					<div class="col-1 text-center" style="padding-left:0px;">
+						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
+					</div>
+					<div class="col-7 float-right mb8 p-0"> 
+						<div class="col-6 mb8 float-left" style="padding-bottom:2px;padding-right:0px;">
+							<div class="float-left" style="width:auto;padding-left:15px;">
+								<t t-call="professional_templates.company_address"/>
+							</div>
+						</div>
+						<div class="col-6 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+							<br/><p/>
+							<div style="width:auto;padding-left:15px;">
+								<div class="fa fa-map-marker" style="margin-bottom:0px; color:#6B6C6C; padding-bottom:2px;white-space:nowrap; "> Grosvenor House</div>
+								<div style="margin-bottom:1px;color:#6B6C6C; padding-bottom:0px; white-space:nowrap;padding-left:10px; "> 11, St Paul's Square</div>
+								<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">Birmingham B3 1RB</div>
+								<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">United Kingdom</div>
+								<div class="fa fa-phone" style="margin-bottom:2px;color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> +44 121 285 5684</div>
+								<div class="fa fa-envelope" style="margin-bottom:2px; color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> info@targetintegration.com</div>
+								</div>
 						</div>
 					</div>
 				</t>
