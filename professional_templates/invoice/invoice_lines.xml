@@ -19,16 +19,41 @@
                 <thead t-attf-style="color:{{style.theme_txt_color if not style.transparent else style.text_color}};">
                     <t t-set="th_style" t-value="'border-bottom: 1px solid #ddd !important;white-space:nowrap;'"></t>
                     <tr t-attf-style="background-color:{{style.theme_color if not style.transparent else 'transparent'}};font-size:{{int(style.body_font)+2}}px;">
-                        <th t-attf-style="{{th_style}}"><i class="fa fa-list-ol"/> Item</th>
-                        <th t-if="style.show_img" t-attf-style="{{th_style}}"><i class="fa fa-camera"/> Image</th>
-                        <th t-attf-style="{{th_style}}"><i class="fa fa-th-large"/> Description</th>
-                        <th t-attf-style="{{th_style}}" class="d-none text-left"><i class="fa fa-th-large"/> Source Document</th>
-                        <th class="text-right" t-attf-style="{{th_style}}"><i class="fa fa-sort-amount-asc"/> Quantity</th>
-                        <th class="text-right" t-attf-style="{{th_style}}"><i class="fa fa-tags"/> Unit Price</th>
+                        <th t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-list-ol"/>  -->
+                            Item
+                        </th>
+                        <th t-if="style.show_img" t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-camera"/>  -->
+                            Image
+                        </th>
+                        <th t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-th-large"/> -->
+                            Description
+                        </th>
+                        <th t-attf-style="{{th_style}}" class="d-none text-left">
+                            <!-- <i class="fa fa-th-large"/>  -->
+                            Source Document
+                        </th>
+                        <th class="text-right" t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-sort-amount-asc"/>  -->
+                            Quantity
+                        </th>
+                        <th class="text-right" t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-tags"/> -->
+                            Unit Price
+                        </th>
                         <th t-if="display_discount" class="text-right" t-attf-style="{{th_style}}"
-                            groups="sale.group_discount_per_so_line"><i class="fa fa-minus-square"/> Discount(%)</th>
-                        <th t-if="display_taxes" class="text-center" t-attf-style="{{th_style}}"><i class="fa fa-pencil-square"/> Taxes</th>
-                        <th class="text-right" t-attf-style="{{th_style}}"><i class="fa fa-money"/>
+                            groups="sale.group_discount_per_so_line">
+                                <!-- <i class="fa fa-minus-square"/> -->
+                                Discount(%)
+                        </th>
+                        <th t-if="display_taxes" class="text-center" t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-pencil-square"/> -->
+                            Taxes
+                        </th>
+                        <th class="text-right" t-attf-style="{{th_style}}">
+                            <!-- <i class="fa fa-money"/> -->
                             <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
                             <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
                         </th>
