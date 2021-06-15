@@ -79,14 +79,14 @@
 							<strong style="white-space:nowrap;">Due Date:</strong>
 							<span t-field="o.invoice_date_due"/>
 						</div>
-						<div t-if="o.sudo().user_id" t-attf-style="{{div_style}}">
+						<!-- <div t-if="o.sudo().user_id" t-attf-style="{{div_style}}">
 							<strong style="white-space:nowrap;">Salesperson:</strong>
 							<span t-field="o.sudo().user_id"/>
 						</div>
 						<div t-if="o.invoice_origin" t-attf-style="{{div_style}}">
 							<strong style="white-space:nowrap;">Source Doc:</strong>
 							<span t-field="o.invoice_origin"/>
-						</div>
+						</div> -->
 						<div t-if="o.fiscal_position_id" t-attf-style="{{div_style}}">
 							<strong style="white-space:nowrap;">Fiscal Position:</strong>
 							<span t-field="o.fiscal_position_id"/>

@@ -83,10 +83,10 @@
 											<strong style="white-space:nowrap;">Expiry Date:</strong>
 											<span t-field="doc.validity_date"/>
 									</div>
-									<div t-if="doc.sudo().user_id" t-attf-style="{{div_style}}">
+									<!-- <div t-if="doc.sudo().user_id" t-attf-style="{{div_style}}">
 											<strong style="white-space:nowrap;">Salesperson:</strong>
 											<span t-field="doc.sudo().user_id"/>
-									</div>
+									</div> -->
 									<div t-if="doc.fiscal_position_id" t-attf-style="{{div_style}}">
 											<strong style="white-space:nowrap;">Fiscal Position:</strong>
 											<span t-field="doc.fiscal_position_id"/>
