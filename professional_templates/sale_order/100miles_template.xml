@@ -4,16 +4,16 @@
 	<template id="SO_13_document" name="100 Miles Template">
 			<!-- Multicompany -->
 			<t t-if="doc and 'company_id' in doc">
-					<t t-set="company" t-value="doc.company_id"/>
+				<t t-set="company" t-value="doc.company_id"/>
 			</t>
 			<t t-if="not doc or not 'company_id' in doc">
-					<t t-set="company" t-value="res_company"/>
+				<t t-set="company" t-value="res_company"/>
 			</t>
 			<div class="header col-12 float-left" t-attf-style="padding-left:0px; padding-right:0px; color:{{style.text_color}};font-size:{{int(style.header_font)}}px;font-family:{{style.font_family}};border-bottom:1px solid {{style.theme_color}}">
 				<t t-if="style.header">
 					<div class="col-4 float-left" style="padding-left:0px;">
 						<span t-if="style.logo">
-								<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
 						</span>
 					</div>
 					<!-- <div class="col-4 float-left text-center" style="padding-left:0px;">
@@ -25,7 +25,7 @@
 						</div>
 					</div> -->
 					<div class="col-1 text-center" style="padding-left:0px;">
-						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
+						<h4 t-field="doc.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
 					</div>
 					<div class="col-7 float-right mb8 p-0"> 
 						<div class="col-6 mb8 float-left" style="padding-bottom:2px;padding-right:0px;">
@@ -42,7 +42,7 @@
 								<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">United Kingdom</div>
 								<div class="fa fa-phone" style="margin-bottom:2px;color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> +44 121 285 5684</div>
 								<div class="fa fa-envelope" style="margin-bottom:2px; color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> info@targetintegration.com</div>
-								</div>
+							</div>
 						</div>
 					</div>
 				</t>
@@ -71,40 +71,40 @@
 							</div>
 					</div>
 					<div class="col-12 float-left mt-3 pb-3 mb-3 px-0"  t-attf-style="border-bottom:1px solid {{style.theme_color}};">
-							<div class="col-7 dummy-div float-left" />
-							<div class="col-5 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};padding:15px;">
-									<t t-set="div_style" t-value="'color:{};font-size:{}px; width:100%;'.format(style.theme_txt_color,int(style.body_font)+2)"/>
-									<div t-if="doc.date_order" t-attf-style="{{div_style}}">
-											<strong t-if="doc.state not in ['draft','sent']" style="white-space:nowrap;">Order Date:</strong>
-											<strong t-if="doc.state in ['draft','sent']" style="white-space:nowrap;">Quotation Date:</strong>
-											<span t-field="doc.date_order"/>
-									</div>
-									<div t-if="doc.state in ['draft','sent'] and doc.validity_date" t-attf-style="{{div_style}}">
-											<strong style="white-space:nowrap;">Expiry Date:</strong>
-											<span t-field="doc.validity_date"/>
-									</div>
-									<!-- <div t-if="doc.sudo().user_id" t-attf-style="{{div_style}}">
-											<strong style="white-space:nowrap;">Salesperson:</strong>
-											<span t-field="doc.sudo().user_id"/>
-									</div> -->
-									<div t-if="doc.fiscal_position_id" t-attf-style="{{div_style}}">
-											<strong style="white-space:nowrap;">Fiscal Position:</strong>
-											<span t-field="doc.fiscal_position_id"/>
-									</div>
-									<div t-if="doc.client_order_ref" t-attf-style="{{div_style}}">
-											<strong style="white-space:nowrap;">Client Reference:</strong>
-											<span t-field="doc.client_order_ref"/>
-									</div>
-						</div>
-							<div class="col-7 float-left mt-3" t-if="doc.partner_shipping_id and doc.partner_shipping_id != doc.partner_id">
-									<div class="mt8" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
-											<span>
-													<span class="fa fa-truck "/> Ship To:
-											</span>
-									</div>
-									<address t-field="doc.partner_shipping_id" style="margin-bottom:0px; margin-top:4px;" t-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
-									<span t-if="doc.partner_id.vat">VAT: <span t-field="doc.partner_id.vat"/></span>
+						<div class="col-7 dummy-div float-left" />
+						<div class="col-5 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};padding:15px;">
+							<t t-set="div_style" t-value="'color:{};font-size:{}px; width:100%;'.format(style.theme_txt_color,int(style.body_font)+2)"/>
+							<div t-if="doc.date_order" t-attf-style="{{div_style}}">
+								<strong t-if="doc.state not in ['draft','sent']" style="white-space:nowrap;">Order Date:</strong>
+								<strong t-if="doc.state in ['draft','sent']" style="white-space:nowrap;">Quotation Date:</strong>
+								<span t-field="doc.date_order"/>
 							</div>
+							<div t-if="doc.state in ['draft','sent'] and doc.validity_date" t-attf-style="{{div_style}}">
+								<strong style="white-space:nowrap;">Expiry Date:</strong>
+								<span t-field="doc.validity_date"/>
+							</div>
+							<!-- <div t-if="doc.sudo().user_id" t-attf-style="{{div_style}}">
+									<strong style="white-space:nowrap;">Salesperson:</strong>
+									<span t-field="doc.sudo().user_id"/>
+							</div> -->
+							<div t-if="doc.fiscal_position_id" t-attf-style="{{div_style}}">
+								<strong style="white-space:nowrap;">Fiscal Position:</strong>
+								<span t-field="doc.fiscal_position_id"/>
+							</div>
+							<div t-if="doc.client_order_ref" t-attf-style="{{div_style}}">
+								<strong style="white-space:nowrap;">Client Reference:</strong>
+								<span t-field="doc.client_order_ref"/>
+							</div>
+						</div>
+						<div class="col-7 float-left mt-3" t-if="doc.partner_shipping_id and doc.partner_shipping_id != doc.partner_id">
+							<div class="mt8" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+								<span>
+									<span class="fa fa-truck "/> Ship To:
+								</span>
+							</div>
+							<address t-field="doc.partner_shipping_id" style="margin-bottom:0px; margin-top:4px;" t-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
+							<span t-if="doc.partner_id.vat">VAT: <span t-field="doc.partner_id.vat"/></span>
+						</div>
 					</div> <!--end of wrapper2-->
 					<!-- DATA-->
 					<t t-call="professional_templates.order_lines"/>

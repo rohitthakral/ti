@@ -66,7 +66,7 @@
 			<div class="article page" t-attf-data-oe-model="account.move" t-attf-data-oe-id="{{o.id}}" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
 				<!-- <h4 class="text-center" t-field="o.name">Draft</h4> -->
 				<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
-				<t t-set="div_class" t-value="'col-4' if o.partner_shipping_id and o.partner_shipping_id != o.partner_id else 'col-6'"></t>
+				<t t-set="div_class" t-value="'col-4' if o.partner_shipping_id and o.partner_shipping_id != o.partner_id else 'col-4'"></t>
 				<div t-attf-class="#{div_class} float-left">
 					<span t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">
 						Bill To:</span>
@@ -84,13 +84,14 @@
 					<address t-field="o.partner_id" style="margin-bottom:0px;" t-options='{"widget": "contact", "fields":["address","phone","email","website"],"no_marker": false}'/>
 					<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
 				</div>
+				<div class="#{div_class} dummy-div" />
 				<div t-attf-class="#{div_class} float-left" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
 					<span t-attf-style="font-size:{{int(style.body_font)+6}}px;font-weight:bold;">Ship To:</span>
 					<address t-field="o.partner_shipping_id" style="margin-bottom:0px;" 
 						t-options='{"widget": "contact", "fields":["name", "address","phone","email","website"],"no_marker": false}'/>
 					<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
 				</div>
-				<div t-attf-class="#{div_class} float-right text-right" style="padding-bottom:2px;padding-left:0px;">
+				<div t-attf-class="#{div_class} float-right text-left" style="padding-bottom:2px;padding-left:0px;">
 					<div style="width:auto;padding-left:15px;">
 						<t t-call="professional_templates.company_address"/>
 					</div>
