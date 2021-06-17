@@ -105,9 +105,9 @@
 							<strong style="white-space:nowrap;">Fiscal Position:</strong>
 							<span t-field="o.fiscal_position_id"/>
 						</div>
-						<div t-if="o.name" t-attf-style="{{div_style}}">
+						<div t-if="o.ref" t-attf-style="{{div_style}}">
 							<strong style="white-space:nowrap;">Reference:</strong>
-							<span t-field="o.name"/>
+							<span t-field="o.ref"/>
 						</div>
 					</div>
 					<!-- <div class="col-7 float-left mt8" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
