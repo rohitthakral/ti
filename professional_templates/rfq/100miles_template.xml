@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="RFQ_13_document" name="100 Miles Template">
+            <!-- Multicompany -->
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id" />
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company" />
+            </t>
+            <div class="header col-12 float-left" t-attf-style="padding-left:0px; padding-right:0px; color:{{style.text_color}};font-size:{{int(style.header_font)}}px;font-family:{{style.font_family}};border-bottom:1px solid {{style.theme_color}}">
+				<t t-if="style.header">
+					<div class="col-4 float-left" style="padding-left:0px;">
+						<span t-if="style.logo">
+							<span itemprop="image" t-field="style.logo" t-options="{'widget': 'image', 'style': 'max-height: 150px;'}"/>
+						</span>
+					</div>
+					<div class="col-8 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+						<div class="float-right" style="width:auto;padding-left:15px;">
+							<t t-call="professional_templates.company_address"/>
+						</div>
+					</div>
+				</t>
+			</div>
+            <div class="article page" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
+                <div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
+                <div class="col-12 float-left mt-4 px-0">
+                <!--start of wrapper -->
+                    <div class="col-7 float-left mt-4">
+                        <div t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+                            <span><span class="fa fa-file-text-o"/> Vendor Address:</span>
+                        </div>
+                        <address t-field="o.partner_id" style="margin-bottom:0px;" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;name&quot;, &quot;address&quot;, &quot;phone&quot;,  &quot;email&quot;, &quot;website&quot;], &quot;no_marker&quot;: false}"/>
+                        <span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
+                    </div>
+                    <div class="col-5 float-right mt-4" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
+                        <h3 id="invoice_title" class="mt-2">
+                            <t>
+                                <span t-if="o.state not in ['draft']">Purchase Order:</span>
+                                <span t-if="o.state in ['draft']">Request For Quotation:</span>
+                            </t>
+                            <span t-field="o.name"/>
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-12 float-left mt-3 pb-3 mb-3 px-0"  t-attf-style="border-bottom:1px solid {{style.theme_color}};">
+						<div class="col-7 dummy-div float-left" />
+						<div class="col-7 float-left mt-3">
+							<div class="mt-4" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+								<span>
+									<span class="fa fa-truck "/> Shipping Address:
+								</span>
+							</div>
+
+							<address t-if="o.dest_address_id" t-field="o.dest_address_id" style="margin-bottom:0px; margin-top:4px;" t-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
+							<address t-if="not o.dest_address_id and o.picking_type_id and o.picking_type_id.warehouse_id" t-field="o.picking_type_id.warehouse_id.partner_id" style="margin-bottom:0px; margin-top:4px;" t-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
+							<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
+						</div>
+                </div> 
+                <!-- DATA-->
+                    <t t-call="professional_templates.rfq_lines"/>
+                <!--/DATA-->
+            </div>
+            <!--FOOTER -->
+			<div class="footer" t-attf-style="font-size:{{style.footer_font}}px !important;font-family:{{style.font_family}} !important;">
+                <t t-call="professional_templates.company_footer"/>
+			</div>
+        </template>
+    </data>
+</odoo>

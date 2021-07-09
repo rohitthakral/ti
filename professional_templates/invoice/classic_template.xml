@@ -13,13 +13,13 @@
 				<t t-if="style.header">
 					<div class="col-7 float-left" style="padding-left:0px;">
 						<span t-if="style.logo">
-							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and not company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:left; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-left">
 							<span t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -27,7 +27,7 @@
 							<span t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 						</div>
 					</div>
-					<div class="col-5 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+					<div class="col-5 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 						<div class="float-right" style="width:auto;padding-left:15px;">
 							<t t-call="professional_templates.company_address"/>
 						</div>

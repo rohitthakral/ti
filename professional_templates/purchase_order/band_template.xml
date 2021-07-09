@@ -11,8 +11,8 @@
 						</t>
 						<div class="header col-12" t-attf-style="padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.text_color}} !important;font-size:{{int(style.header_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<t t-if="style.header">
-										<div class="col-12 mb8" t-attf-style="height:30px; background-color:{{style.theme_color}}"/> <!--The BAND -->
-										<div class="col-5 float-left mb8" style="padding-bottom:2px;">
+										<div class="col-12 mb-4" t-attf-style="height:30px; background-color:{{style.theme_color}}"/> <!--The BAND -->
+										<div class="col-5 float-left mb-4" style="padding-bottom:2px;">
 												<div>
 														<t t-call="professional_templates.company_address"/>
 												</div>
@@ -20,16 +20,16 @@
 										<div class="col-7 float-right" style="padding-right:0px;">
 												<div class="col-12 text-right" style="padding-right:0px;">
 														<span t-if="style.logo">
-																<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
 														<span t-if="not style.logo and company.logo">
-																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
 														<span t-if="not style.logo and not company.logo">
-																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
 												</div>
-												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="col-12 mb8 float-right">
+												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="col-12 mb-4 float-right">
 														<span t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
 														<span t-if="company.facebook" style="padding-left:4px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
 														<span t-if="company.youtube" style="padding-left:4x;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
@@ -43,7 +43,7 @@
 								<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
 								<t t-set="div_class" t-value="'col-3 float-left'"></t>
 								<div>
-										<div t-attf-class="#{div_class}">
+										<div t-attf-class="#{div_class} mt-4">
 												<span t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Vendor Address:</span>
 												<div t-if="o.partner_id" t-attf-style="color:{{style.cust_color}};font-size:{{int(style.body_font)+6}}px;font-weight:500;"> 
 														<t t-if="o.partner_id.parent_id">
@@ -56,14 +56,14 @@
 												<address t-field="o.partner_id" style="margin-bottom:0px;" t-options='{"widget": "contact", "fields":["address","phone","email","website"],"no_marker": false}'/>
 												<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
 										</div>
-										<div t-attf-class="#{div_class}">
+										<div t-attf-class="#{div_class} mt-4">
 												<span t-attf-style="font-size:{{int(style.body_font)+6}}px;font-weight:bold;">Shipping Address:</span>
 												<address t-if="o.dest_address_id" t-field="o.dest_address_id" style="margin-bottom:0px;" 
 														t-options='{"widget": "contact", "fields":["name", "address","phone","email","website"],"no_marker": false}'/>
 												<address t-if="not o.dest_address_id and o.picking_type_id and o.picking_type_id.warehouse_id" t-field="o.picking_type_id.warehouse_id.partner_id" style="margin-bottom:0px;" 
 														t-options='{"widget": "contact", "fields":["name", "address","phone","email","website"],"no_marker": false}'/>
 										</div>
-										<div t-attf-class="#{div_class} mt8">
+										<div t-attf-class="#{div_class} mt-4">
 												<ul> 
 														<div t-if="o.name">
 																<strong t-if="o.state != 'draft'" style="white-space:nowrap;">Purchase Order #</strong>
@@ -87,7 +87,7 @@
 														</div>
 												</ul> 
 										</div>
-										<div t-attf-class="#{div_class} mt8 text-right">
+										<div t-attf-class="#{div_class} mt-4 text-right">
 												<ul> 
 														<div t-if="o.name">
 																<span t-field="o.name"/>

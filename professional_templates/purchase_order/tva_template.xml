@@ -20,13 +20,13 @@
 										</div>
 										<div class="col-5 float-right" style="text-align:right; padding-left:0px; padding-right:0px;">
 												<div t-if="style.logo" style="width:100%; text-align:right; padding-bottom:3px; padding-top:3px;">
-														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</div>
 												<div t-if="not style.logo and company.logo" style="width:100%; text-align:right;padding-bottom:8px;padding-top:3px;">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</div>
 												<div t-if="not style.logo and not company.logo" style="width:100%;text-align:right;padding-bottom:8px;padding-top:3px;">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</div>
 												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto;
 														float:right; padding-left:0px; color:{{style.theme_txt_color}};padding-right:15px; padding-top:2px; padding-bottom:2px;">
@@ -41,7 +41,7 @@
 						<!-- START OF PAGE -->
 						<div class="article page" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
-								<div class="col-6 float-left mt-2" t-attf-style="border:1px solid {{style.text_color}};"> 
+								<div class="col-6 float-left mt-4" t-attf-style="border:1px solid {{style.text_color}};"> 
 										<div  t-attf-style="float:left; width:100%; margin-top:0px;color:{{style.text_color}} !important;">
 												<h3 id="title" style="margin-top:10px;">
 														<span t-if="o.state != 'draft'">Purchase Order  </span>
@@ -50,7 +50,7 @@
 												</h3>
 										</div>
 								</div>
-								<div class="col-5 float-right" style="border:1px solid;padding:15px;">
+								<div class="col-5 float-right mt-4" style="border:1px solid;padding:15px;">
 										<span t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;"><span class="fa fa-truck"/> Shipping Address:</span>
 										<div t-if="o.dest_address_id">
 												<address t-field="o.dest_address_id" style="margin-bottom:0px;"

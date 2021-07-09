@@ -13,52 +13,66 @@
 				<t t-if="style.header">
 					<div class="col-4 float-left" style="padding-left:0px;">
 						<span t-if="style.logo">
-							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options="{'widget': 'image', 'style': 'max-height: 150px;'}"/>
 						</span>
 					</div>
+					<div class="col-3 text-center" style="padding-left:0px;">
+						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
+					</div>
+					<div class="col-5 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+						<div class="float-right" style="width:auto;padding-left:15px;">
+							<t t-call="professional_templates.company_address"/>
+						</div>
+					</div>
+					
+					<!--changed on july 5-->
+					<!--<div class="col-1 text-center" style="padding-left:0px;">-->
+					<!--	<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>-->
+					<!--</div>-->
+					<!--<div class="col-7 float-right mb8 p-0"> -->
+					<!--	<div class="col-6 mb8 float-left" style="padding-bottom:2px;padding-right:0px;">-->
+					<!--		<div class="float-left" style="width:auto;padding-left:15px;">-->
+					<!--			<t t-call="professional_templates.company_address"/>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--	<div class="col-6 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">-->
+					<!--		<br/><p/>-->
+					<!--		<div style="width:auto;padding-left:15px;">-->
+					<!--			<div class="fa fa-map-marker" style="margin-bottom:0px; color:#6B6C6C; padding-bottom:2px;white-space:nowrap; "> Grosvenor House</div>-->
+					<!--			<div style="margin-bottom:1px;color:#6B6C6C; padding-bottom:0px; white-space:nowrap;padding-left:10px; "> 11, St Paul's Square</div>-->
+					<!--			<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">Birmingham B3 1RB</div>-->
+					<!--			<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">United Kingdom</div>-->
+					<!--			<div class="fa fa-phone" style="margin-bottom:2px;color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> +44 121 285 5684</div>-->
+					<!--			<div class="fa fa-envelope" style="margin-bottom:2px; color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> info@targetintegration.com</div>-->
+					<!--			</div>-->
+					<!--	</div>-->
+					<!--</div>-->
+
+
+
+
 					<!-- <div class="col-4 text-center" style="padding-left:0px;">
 						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
 					</div>
-					<div class="col-4 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+					<div class="col-4 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 						<div class="float-right" style="width:auto;padding-left:15px;">
 							<t t-call="professional_templates.company_address"/>
 						</div>
 					</div> -->
-					<div class="col-1 text-center" style="padding-left:0px;">
-						<h4 t-field="o.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
-					</div>
-					<div class="col-7 float-right mb8 p-0"> 
-						<div class="col-6 mb8 float-left" style="padding-bottom:2px;padding-right:0px;">
-							<div class="float-left" style="width:auto;padding-left:15px;">
-								<t t-call="professional_templates.company_address"/>
-							</div>
-						</div>
-						<div class="col-6 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
-							<br/><p/>
-							<div style="width:auto;padding-left:15px;">
-								<div class="fa fa-map-marker" style="margin-bottom:0px; color:#6B6C6C; padding-bottom:2px;white-space:nowrap; "> Grosvenor House</div>
-								<div style="margin-bottom:1px;color:#6B6C6C; padding-bottom:0px; white-space:nowrap;padding-left:10px; "> 11, St Paul's Square</div>
-								<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">Birmingham B3 1RB</div>
-								<div style="margin-bottom:1px; color:#6B6C6C;padding-bottom:0px;white-space:nowrap;padding-left:10px; ">United Kingdom</div>
-								<div class="fa fa-phone" style="margin-bottom:2px;color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> +44 121 285 5684</div>
-								<div class="fa fa-envelope" style="margin-bottom:2px; color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> info@targetintegration.com</div>
-								</div>
-						</div>
-					</div>
 				</t>
 			</div>
 			<div class="article page" t-attf-data-oe-model="account.move" t-attf-data-oe-id="{{o.id}}" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
 				<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
 				<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
 				<div class="col-12 float-left py-2" t-attf-style="padding-left:0px; padding-right:0px;"><!--start of wrapper -->
-					<div class="col-7 float-left mt8">
+					<div class="col-7 float-left mt-4">
 						<div t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
 							<span><span class="fa fa-file-text-o"/> Invoice To:</span>
 						</div>
 						<address t-field="o.partner_id" style="margin-bottom:0px;" t-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
 						<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
 					</div>
-					<div class="col-5 mb-4 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
+					<div class="col-5 mb-4 float-right mt-4" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
 						<h3 id="invoice_title" class="mt-2">
 							<span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
 							<span t-elif="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice No:</span>
@@ -71,9 +85,9 @@
 					</div>
 				</div>
 				<div class="col-12 float-left py-2" t-attf-style="padding-left:0px; padding-right:0px;border-bottom:1px solid {{style.theme_color}};">
-					<div class="col-7 float-left mt8">
+					<div class="col-7 float-left mt-4">
 					  <t t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
-  						<div class="mt8" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+  						<div class="mt-4" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
   							<span>
   								<span class="fa fa-truck "/> Ship To:
   							</span>
@@ -83,7 +97,7 @@
   					</t>
 					</div>
 					
-					<div class="col-5 mt8 mb8 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};padding:15px;">
+					<div class="col-5 mt-4 mb-4 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};padding:15px;">
 						<t t-set="div_style" t-value="'color:{};font-size:{}px; width:100%;'.format(style.theme_txt_color,int(style.body_font)+2)"/>
 						<div t-if="o.invoice_date" t-attf-style="{{div_style}}">
 							<strong style="white-space:nowrap;">Invoice Date:</strong>
@@ -110,8 +124,8 @@
 							<span t-field="o.ref"/>
 						</div>
 					</div>
-					<!-- <div class="col-7 float-left mt8" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
-						<div class="mt8" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+					<!-- <div class="col-7 float-left mt-4" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
+						<div class="mt-4" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
 							<span>
 								<span class="fa fa-truck "/> Ship To:
 							</span>

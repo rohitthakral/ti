@@ -22,15 +22,15 @@
 												</div>
 												<div class="col-6 float-right text-right" style="padding-right:0px;">
 														<span t-if="style.logo">
-																<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right; max-width:100% !important;"}'/>
+																<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 														</span>
 														<span t-if="not style.logo and company.logo">
-																<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; max-width:100% !important;"}'/>
+																<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 														</span>
 														<span t-if="not style.logo and not company.logo">
-																<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; max-width:100% !important;"}'/>
+																<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 														</span>
-														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:0px; padding-top:4px; padding-bottom:2px;" class="float-right mb8">
+														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:0px; padding-top:4px; padding-bottom:2px;" class="float-right mb-4">
 																<span t-if="company.twitter" style="padding-left:2px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
 																<span t-if="company.facebook" style="padding-left:2px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
 																<span t-if="company.youtube" style="padding-left:2px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
@@ -43,7 +43,7 @@
 						<div class="article page" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
 								<t t-set="div_class" t-value="'col-4'"></t>
-								<div  t-attf-class="#{div_class} float-left mb8">
+								<div  t-attf-class="#{div_class} float-left mb-4">
 										<span t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">From:</span>
 										<t t-call="professional_templates.company_address"/>
 								</div>
@@ -68,7 +68,7 @@
 										<address t-if="o.move_lines and o.move_lines[0].partner_id" t-field="o.partner_id" style="margin-bottom:0px;" t-options='{"widget": "contact", "fields":["address","phone","email","website"],"no_marker": false}'/>
 										<address t-if="not (o.move_lines and o.move_lines[0].partner_id) and o.partner_id" t-field="o.partner_id" style="margin-bottom:0px;" t-options='{"widget": "contact", "fields":["address","phone","email","website"],"no_marker": false}'/>
 								</div>
-								<div t-attf-class="#{div_class} float-right mt8">
+								<div t-attf-class="#{div_class} float-right mt-4">
 										<ul> 
 												<div t-if="o.name">
 														<strong style="white-space:nowrap;">Delivery Note #: </strong>

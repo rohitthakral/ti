@@ -11,28 +11,28 @@
 						</t>
 						<div class="header col-12 float-left" t-attf-style="background-color:{{style.theme_color}};padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.theme_txt_color}} !important;font-size:{{int(style.header_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<t t-if="style.header">
-										<div class="col-5 float-left  mt16" style="padding-bottom:2px;padding-left:0px;">
+										<div class="col-5 float-left  mt-4" style="padding-bottom:2px;padding-left:0px;">
 												<div style="width:auto;padding-left:15px;">
 														<t t-call="professional_templates.company_address"/>
 												</div>
 										</div>
-										<div class="col-2 float-left mt16" style="padding-right:0px;padding-left:0px;">
+										<div class="col-2 float-left mt-4" style="padding-right:0px;padding-left:0px;">
 												<h4 class="text-center mt4">
 														<span style="white-space:nowrap;">PICKING SLIP</span>
 												</h4>
 												<p class="text-center" t-field="o.name" t-attf-style="font-size:{{int(style.header_font)+4}}px;white-space:nowrap;"/>
 										</div>
-										<div class="col-5 float-right mt16 text-right" style="padding-right:0px;">
+										<div class="col-5 float-right mt-4 text-right" style="padding-right:0px;">
 												<span t-if="style.logo">
-														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right; max-width: 100% !important;"}'/>
+														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
 												<span t-if="not style.logo and company.logo">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; max-width: 100% !important;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
 												<span t-if="not style.logo and not company.logo">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; max-width: 100% !important;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
-												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-right mb8">
+												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-right mb-4">
 														<div t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
 														<div t-if="company.facebook" style="padding-left:4px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
 														<div t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
@@ -47,7 +47,7 @@
 										<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
 								</div>
 								<t t-set="div_class" t-value="'col-4'"></t>
-								<div t-attf-class="#{div_class} float-left mb8">
+								<div t-attf-class="#{div_class} float-left mb-4">
 										<span t-if="o.picking_type_id.code=='outgoing' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Customer Address:</span>
 										<span t-if="o.picking_type_id.code=='internal' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Warehouse Address:</span>
 										<span t-if="o.picking_type_id.code=='incoming' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Vendor Address:</span>
@@ -76,7 +76,7 @@
 														t-options='{"widget": "contact", "fields": ["address", "name", "phone",  "email", "website"]}'/>
 										</t>
 								</div>
-								<div t-attf-class="#{div_class} float-right mt8">
+								<div t-attf-class="#{div_class} float-right mt-4">
 										<ul> 
 												<div t-if="o.name">
 														<strong style="white-space:nowrap;">Picking Slip # </strong>

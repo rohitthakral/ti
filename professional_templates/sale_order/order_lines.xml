@@ -171,7 +171,7 @@
                     <span t-field="doc.note"/>
                 </p>
             </div>
-            <div t-if="doc.signature" class="row mt32" name="signature" style="page-break-inside: avoid !important;">
+            <div t-if="doc.signature" class="row mt-4" name="signature" style="page-break-inside: avoid !important;">
                 <div class="offset-8 col-4">
                     <strong>Signature</strong>
                 </div>

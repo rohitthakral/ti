@@ -16,16 +16,16 @@
                                 Company specific settings for printed reports
                             </div>
                             <div class="row content-group">
-                                <div class="mt16 col-12 text-nowrap">
+                                <div class="mt-4 col-12 text-nowrap">
                                     <label for="df_style" string="Style" class="o_light_label"/>
                                     <field name="df_style" class="oe_inline"/>
                                 </div>
-                                <div class="mt16 col-12 text-nowrap">
+                                <div class="mt-4 col-12 text-nowrap">
                                     <label for="pdf_watermark"  class="o_light_label"/>
                                     <field name="pdf_watermark" class="oe_inline" filename="pdf_watermark_fname"/>
                                     <field name="pdf_watermark_fname" class="oe_inline" invisible="1"/>
                                 </div>
-                                <div class="mt16 col-12 text-nowrap">
+                                <div class="mt-4 col-12 text-nowrap">
                                     <label for="pdf_last_page" class="o_light_label"/>
                                     <field name="pdf_last_page" class="oe_inline" filename="pdf_last_page_fname"/>
                                     <field name="pdf_last_page_fname" class="oe_inline" invisible="1"/>

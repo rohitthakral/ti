@@ -11,13 +11,13 @@
 			</t>
 			<div class="header col-12 float-left" t-attf-style="padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.text_color}} !important;font-size:{{int(style.header_font)}}px !important;font-family:{{style.font_family}} !important;">
 				<t t-if="style.header">
-					<div class="col-12 mb8 float-left" t-attf-style="border-bottom:15px dotted {{style.theme_color}}">
+					<div class="col-12 mb-4 float-left" t-attf-style="border-bottom:15px dotted {{style.theme_color}}">
 						<h4 class="text-center">
 							<span t-field="company.name" t-attf-style="color:{{style.name_color}};white-space:nowrap;font-size:{{int(style.header_font)+6}}px;font-weight:500;"/>  
 						</h4>
 						<div  class="col-4 float-left" style="padding-left:0px;">
 							<t t-call="professional_templates.company_address_noname"/>
-							<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb8">
+							<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb-4">
 								<span t-if="company.twitter" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/> &#160;
 								<span t-if="company.facebook" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/> &#160; 
 								<span t-if="company.youtube" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube"/> 

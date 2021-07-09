@@ -13,13 +13,13 @@
 								<t t-if="style.header">
 										<div class="col-7 float-right" style="padding-bottom:10px; text-align:right; padding-left:0px; padding-right:0px;">
 												<div t-if="style.logo" style="width:100%; text-align:right; padding-bottom:8px;">
-														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "display: inline-block;max-width:100% !important;"}'/>
+														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "display: inline-block; width: 165px !important;height: 152px !important;"}'/>
 												</div>
 												<div t-if="not style.logo and company.logo" style="width:100%; text-align:right;padding-bottom:8px;">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "display: inline-block;max-width:100% !important;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "display: inline-block; width: 165px !important;height: 152px !important;"}'/>
 												</div>
 												<div t-if="not style.logo and not company.logo" style="width:100%;text-align:right;padding-bottom:8px;">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "display: inline-block;max-width:100% !important;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "display: inline-block; width: 165px !important;height: 152px !important;"}'/>
 												</div>
 												<div t-if="company.twitter or company.facebook or company.youtube" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:2px; padding-bottom:2px;" class="float-right">
 														<span t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -27,7 +27,7 @@
 														<span t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 												</div>
 										</div>
-										<div class="col-5 mb8 float-left" style="padding-bottom:2px;padding-left:0px;">
+										<div class="col-5 mb-4 float-left" style="padding-bottom:2px;padding-left:0px;">
 												<t t-call="professional_templates.company_address"/>
 										</div>
 								</t>

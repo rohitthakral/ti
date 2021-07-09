@@ -10,8 +10,8 @@
             <field name="name">100 Miles</field>
             <field name="template_inv" ref="professional_templates.INVOICE_13_document"/>
             <field name="template_so" ref="professional_templates.SO_13_document"/>
-            <field name="template_po" ref="professional_templates.PO_10_document"/>
-            <field name="template_rfq" ref="professional_templates.RFQ_10_document"/>
+            <field name="template_po" ref="professional_templates.PO_13_document"/>
+            <field name="template_rfq" ref="professional_templates.RFQ_13_document"/>
             <field name="template_dn" ref="professional_templates.DN_10_document"/>
             <field name="template_pk" ref="professional_templates.PICK_10_document"/>
             <field name="odd" eval="'#F2F2F2'"/>
@@ -44,8 +44,8 @@
             <field name="name">100 Miles India</field>
             <field name="template_inv" ref="professional_templates.INVOICE_13_document"/>
             <field name="template_so" ref="professional_templates.SO_13_document"/>
-            <field name="template_po" ref="professional_templates.PO_1_document"/>
-            <field name="template_rfq" ref="professional_templates.RFQ_1_document"/>
+            <field name="template_po" ref="professional_templates.PO_13_document"/>
+            <field name="template_rfq" ref="professional_templates.RFQ_13_document"/>
             <field name="template_dn" ref="professional_templates.DN_1_document"/>
             <field name="template_pk" ref="professional_templates.PICK_1_document"/>
             <field name="odd" eval="'#F2F2F2'"/>

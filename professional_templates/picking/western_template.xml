@@ -17,7 +17,7 @@
 												</h4>
 												<div  class="col-4 float-left" style="padding-left:0px;">
 														<t t-call="professional_templates.company_address_noname"/>
-														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb8">
+														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb-4">
 																<span t-if="company.twitter" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/> &#160;
 																<span t-if="company.facebook" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/> &#160; 
 																<span t-if="company.youtube" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube"/> 

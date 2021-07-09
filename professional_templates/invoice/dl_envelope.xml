@@ -13,13 +13,13 @@
 				<t t-if="style.header">
 					<div class="col-7 float-left" style="padding-left:0mm;">
 						<span t-if="style.logo">
-							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and not company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<div t-if="company.twitter or company.facebook or company.youtube" t-attf-style="background-color:{{style.theme_color}};width:auto;padding-left:0mm; color:{{style.theme_txt_color}}; padding-right:4mm; padding-top:2mm; padding-bottom:0.6mm;" class="float-left">
 							<span t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -27,7 +27,7 @@
 							<span t-if="company.youtube" style="padding-left:4px" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 						</div>
 					</div>
-					<div class="col-5 mb8 float-right" style="padding-bottom:0.6mm;padding-right:0mm;">
+					<div class="col-5 mb-4 float-right" style="padding-bottom:0.6mm;padding-right:0mm;">
 						<div class="float-right" style="width:auto;padding-left:4mm;">
 							<t t-call="professional_templates.company_address"/>
 						</div>
@@ -41,8 +41,8 @@
 						<span><span class="fa fa-user "/>&#160;Customer</span>
 				 </div>-->
 
-				 <div class="col-12 mt16 float-left" style="padding-left:0mm; padding-right:0mm;"><!--start of wrapper -->
-					 <div class="col-7 float-left mt8" style="padding-left:18mm">
+				 <div class="col-12 mt-4 float-left" style="padding-left:0mm; padding-right:0mm;"><!--start of wrapper -->
+					 <div class="col-5 float-left mt-4" style="padding-left:18mm">
 						 <div t-if="o.partner_id" t-attf-style="color:{{style.cust_color}}; margin-top:1.3mm; margin-bottom:0mm; margin-left:0mm;font-size:{{int(style.body_font)+2}}px;"> 
 							 <t t-if="o.partner_id.parent_id">
 								 <span t-field="o.partner_id.parent_id"/>, <span t-if="o.partner_id.title" t-field="o.partner_id.title"/> <span t-field="o.partner_id.name"/>
@@ -68,7 +68,7 @@
 
 						 </div>
 					 </div>
-					 <div class="col-5 mt8 mb8 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
+					 <div class="col-7 mt-4 mb-4 float-right p-2" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
 						 <h3 id="invoice_title">
 							 <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
 							 <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice#</span>

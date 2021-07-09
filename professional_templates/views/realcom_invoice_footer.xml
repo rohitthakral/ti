@@ -29,7 +29,7 @@
             <div t-if="o.name">Number: <span t-field="o.name"/></div>
         </div>
     </div>
-    <div class="col-12 mt16" style="margin-left:-5mm;padding-left:0px;">
+    <div class="col-12 mt-4" style="margin-left:-5mm;padding-left:0px;">
         <div class="col-4" style="padding-left:0px;">
             <address t-field="company.partner_id" style="margin-bottom:0px;font-size:8px !important;" t-field-options='{"widget": "contact", "fields":["name", "address","phone"],"no_marker": true}'/>
         </div>
@@ -38,10 +38,10 @@
         </div>
     </div>
     <div class="col-12" style="margin-left:-5mm;padding-left:0px; padding-top:40px;">
-        <div class="mt16" style="letter-spacing:9px;width:30%;float:left;padding-right:13px; padding-top:0px;text-align:right;white-space:nowrap;font-size:18px">
+        <div class="mt-4" style="letter-spacing:9px;width:30%;float:left;padding-right:13px; padding-top:0px;text-align:right;white-space:nowrap;font-size:18px">
             <t t-esc="'{0:.2f}'.format(o.amount_total)"/> 
         </div>
-        <div class="col-4 mt8" style="letter-spacing:9px;padding-left:0px;padding-right:6px; padding-top:7px;text-align:right;white-space:nowrap;font-size:18px;">
+        <div class="col-4 mt-4" style="letter-spacing:9px;padding-left:0px;padding-right:6px; padding-top:7px;text-align:right;white-space:nowrap;font-size:18px;">
             <t t-esc="'{0:.2f}'.format(o.amount_total)"/>
         </div>
         <div class="col-4" style="padding-top:5mm;">

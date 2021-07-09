@@ -13,13 +13,13 @@
 				<t t-if="style.header">
 					<div class="col-7 float-left" style="padding-left:0px;">
 						<span t-if="style.logo">
-							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<span t-if="not style.logo and not company.logo">
-							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "width: 165px !important;height: 152px !important;"}'/>
 						</span>
 						<div t-if="company.twitter or company.facebook or company.youtube" t-attf-style="background-color:{{style.theme_color}};width:auto;padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-left">
 							<span t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -27,7 +27,7 @@
 							<span t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 						</div>
 					</div>
-					<div class="col-5 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+					<div class="col-5 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 						<div class="float-right" style="width:auto;padding-left:15px;">
 							<t t-call="professional_templates.company_address"/>
 						</div>
@@ -39,7 +39,7 @@
 				<div class="col-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:relative;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
 
 				<div class="col-12 float-left" style="padding-left:0px; padding-right:0px;"><!--start of wrapper -->
-					<div class="col-7 float-left mt8">
+					<div class="col-6 float-left mt-4">
 						<div t-attf-style="display:inline;width:auto;background-color:{{style.theme_color}};padding:4px; color:{{style.theme_txt_color}};font-size:{{int(style.body_font)+2}}px;">
 							<span t-if="o.partner_shipping_id == o.partner_id"><span class="fa fa-user "/> Invoicing&#160; &amp;&#160; <span class="fa fa-truck "/> Shipping Address</span>
 							<span t-if="o.partner_shipping_id != o.partner_id"><span class="fa fa-user "/> Invoicing Address</span>
@@ -56,7 +56,7 @@
 							t-options='{"widget": "contact", "fields": ["address", "phone",  "email", "website"], "no_marker": false}'/>
 						<span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
 					</div>
-					<div class="col-5 mt8 mb8 float-right" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
+					<div class="col-6 mt-4 mb-4 float-right p-2" t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};">
 						<h3 id="invoice_title">
 							<span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
 							<span t-elif="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice#</span>
@@ -90,8 +90,8 @@
 						</div>
 
 					</div>
-					<div class="col-7 float-left mt8" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
-						<div class="mt8" t-attf-style="display:inline;width:auto;background-color:{{style.theme_color}};padding:4px; color:{{style.theme_txt_color}};
+					<div class="col-7 float-left mt-4" t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id">
+						<div class="mt-4" t-attf-style="display:inline;width:auto;background-color:{{style.theme_color}};padding:4px; color:{{style.theme_txt_color}};
 							font-size:{{int(style.body_font)+2}}px;">
 							<span><span class="fa fa-truck "/> Shipping Address</span>
 						</div>

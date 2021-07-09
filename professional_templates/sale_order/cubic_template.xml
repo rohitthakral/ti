@@ -11,12 +11,12 @@
 						</t>
 						<div class="header col-12 float-left" t-attf-style="background-color:{{style.theme_color}};padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.theme_txt_color}} !important;font-size:{{int(style.header_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<t t-if="style.header">
-										<div class="col-5 mt16 float-left" style="padding-bottom:2px;padding-left:0px;">
+										<div class="col-5 mt-4 float-left" style="padding-bottom:2px;padding-left:0px;">
 												<div style="width:auto;padding-left:15px;">
 														<t t-call="professional_templates.company_address"/>
 												</div>
 										</div>
-										<div class="col-2 mt16 pt-1 float-left" style="padding-right:0px;padding-left:0px;">
+										<div class="col-2 mt-4 pt-1 float-left" style="padding-right:0px;padding-left:0px;">
 												<h4 class="text-center mt4">
 														<t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
 																<span t-if="doc.state not in ['draft','sent']" style="white-space:nowrap;">ORDER</span>
@@ -28,17 +28,17 @@
 												</h4>
 												<p class="text-center" t-field="doc.amount_total" t-attf-style="font-size:{{int(style.header_font)+4}}px;white-space:nowrap;"/>
 										</div>
-										<div class="col-5 float-right mt16 float-right" style="padding-right:0px;">
+										<div class="col-5 float-right mt-4 float-right" style="padding-right:0px;">
 												<span t-if="style.logo">
-														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right;"}'/>
+														<span itemprop="image" t-field="style.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
 												<span t-if="not style.logo and company.logo">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
 												<span t-if="not style.logo and not company.logo">
-														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right;"}'/>
+														<span itemprop="image" t-field="company.logo" t-options='{"widget": "image", "style": "float:right; width: 165px !important;height: 152px !important;"}'/>
 												</span>
-												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-right mb8">
+												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="float-right mb-4">
 														<div t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
 														<div t-if="company.facebook" style="padding-left:4px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
 														<div t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />

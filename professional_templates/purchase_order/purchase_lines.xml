@@ -4,7 +4,7 @@
 				<template id="purchase_lines" name="Purchase Data">
 						<t t-set="th_style" t-value="'border-bottom: 1px solid #ddd !important; white-space:nowrap;'"/>
 						<t t-set="display_taxes" t-value="any([y.taxes_id for y in o.order_line])"/>
-						<table class="table  table-condensed mt8" t-attf-style="color:{{style.text_color}};" >
+						<table class="table  table-condensed mt-4" t-attf-style="color:{{style.text_color}};" >
 								<thead t-attf-style="background-color:{{style.theme_color if not style.transparent else 'transparent'}}; page-break-inside: avoid; color:{{style.theme_txt_color if not style.transparent else style.text_color}};">
 										<tr t-attf-style="page-break-inside: avoid !important; border-bottom: 1px solid {{style.text_color}} !important;font-size:{{int(style.body_font)+2}}px;">
 												<th t-attf-style="{{th_style}}"><i class="fa fa-list-ol"/> Item</th>

@@ -13,13 +13,13 @@
 								<t t-if="style.header">
 										<div class="col-7 float-left" style="padding-left:0px;">
 												<span t-if="style.logo">
-														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</span>
 												<span t-if="not style.logo and company.logo">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</span>
 												<span t-if="not style.logo and not company.logo">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 												</span>
 
 												<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; 
@@ -29,7 +29,7 @@
 														<span t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 												</div>
 										</div>
-										<div class="col-5 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+										<div class="col-5 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 												<div class="float-right" style="width:auto;padding-left:15px;">
 														<t t-call="professional_templates.company_address"/>
 												</div>
@@ -55,7 +55,7 @@
 										</div>
 								</div> <!--end of wrapper-->
 								<div class="col-12" style="padding-left:0px; padding-right:0px;"><!--start of wrapper -->
-										<div class="col-8 float-left mt8" style="padding-left:8px; padding-right:0px;">
+										<div class="col-8 float-left mt-4" style="padding-left:8px; padding-right:0px;">
 												<div t-if="o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px;color:{{style.cust_color}}; margin-top:5px; margin-bottom:5px; margin-left:0px;"> 
 														<t t-if="o.partner_id.parent_id">
 																<span t-field="o.partner_id.parent_id"/>, <span t-if="o.partner_id.title" t-field="o.partner_id.title"/> <span t-field="o.partner_id.name"/>

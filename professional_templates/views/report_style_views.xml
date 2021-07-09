@@ -77,11 +77,11 @@
                             </group>
                                 <label for="watermark"/>
                                 <pre><field name="watermark"/></pre>
-                                <div class="text-muted mt16" style="white-space:normal;" attrs="{'invisible': [('show_footer_logo', '=', False)], 'required': [('show_footer_logo', '=', True)]}">
+                                <div class="text-muted mt-4" style="white-space:normal;" attrs="{'invisible': [('show_footer_logo', '=', False)], 'required': [('show_footer_logo', '=', True)]}">
                                     <span class="label label-info orders_label_text_align"><span class="fa fa-info-circle"/> NOTE</span> 
                                     To upload your watermark design in PDF format for each report, go to <code>Settings <span class="fa fa-long-arrow-right"/> Technical <span class="fa fa-long-arrow-right"/> Actions <span class="fa fa-long-arrow-right"/> Reports </code> and search for <code>professional_templates</code> then open each of the report and proceed to <code>Advanced Properties</code> where you can upload your PDF. The PDF will form the background of your report as shown in example below.
                                 </div>
-                                <div class="text-center mt16">
+                                <div class="text-center mt-4">
                                     <img alt="Watermark Example" style="display:inline-block;" width="50%" src="/professional_templates/static/description/wm.png"/>
                                  </div>
                         </page>

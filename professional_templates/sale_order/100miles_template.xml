@@ -13,27 +13,27 @@
 				<t t-if="style.header">
 					<div class="col-4 float-left" style="padding-left:0px;">
 						<span t-if="style.logo">
-							<span itemprop="image" t-field="style.logo" t-options='{"widget": "image"}'/>
+							<span itemprop="image" t-field="style.logo" t-options="{'widget': 'image', 'style': 'max-height: 150px;'}"/>
 						</span>
 					</div>
-					<!-- <div class="col-4 float-left text-center" style="padding-left:0px;">
+					<div class="col-3 float-left text-center" style="padding-left:0px;">
 						<h4 t-field="doc.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
 					</div>
-					<div class="col-4 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+					<div class="col-5 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
 						<div class="float-right" style="width:auto;padding-left:15px;">
 								<t t-call="professional_templates.company_address"/>
 						</div>
-					</div> -->
-					<div class="col-1 text-center" style="padding-left:0px;">
+					</div>
+					<!-- <div class="col-1 text-center" style="padding-left:0px;">
 						<h4 t-field="doc.project_title" t-attf-style="background-color:{{style.theme_color}};color:{{style.theme_txt_color}};"/>
 					</div>
-					<div class="col-7 float-right mb8 p-0"> 
-						<div class="col-6 mb8 float-left" style="padding-bottom:2px;padding-right:0px;">
+					<div class="col-7 float-right mb-4 p-0"> 
+						<div class="col-6 mb-4 float-left" style="padding-bottom:2px;padding-right:0px;">
 							<div class="float-left" style="width:auto;padding-left:15px;">
 								<t t-call="professional_templates.company_address"/>
 							</div>
 						</div>
-						<div class="col-6 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+						<div class="col-6 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 							<br/><p/>
 							<div style="width:auto;padding-left:15px;">
 								<div class="fa fa-map-marker" style="margin-bottom:0px; color:#6B6C6C; padding-bottom:2px;white-space:nowrap; "> Grosvenor House</div>
@@ -44,7 +44,7 @@
 								<div class="fa fa-envelope" style="margin-bottom:2px; color:#6B6C6C; padding-bottom:0px;white-space:nowrap; "> info@targetintegration.com</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</t>
 			</div>
 			<div class="article page" t-attf-style="color:{{style.text_color}} !important;font-size:{{int(style.body_font)}}px !important;font-family:{{style.font_family}} !important;">
@@ -97,7 +97,7 @@
 							</div>
 						</div>
 						<div class="col-7 float-left mt-3" t-if="doc.partner_shipping_id and doc.partner_shipping_id != doc.partner_id">
-							<div class="mt8" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
+							<div class="mt-4" t-attf-style="display:inline;width:auto;padding:4px; color:{{style.theme_color}};font-size:{{int(style.body_font)+2}}px;font-weight:bold;">
 								<span>
 									<span class="fa fa-truck "/> Ship To:
 								</span>

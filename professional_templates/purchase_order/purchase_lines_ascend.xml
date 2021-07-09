@@ -6,7 +6,7 @@
 						<t t-set="td_style" t-value="'border: 1px solid ' +  style.text_color + ' !important;'"/>
 						<t t-set="display_taxes" t-value="any([y.taxes_id for y in o.order_line])"/>
 						<t t-set="col_span" t-value="8 if display_taxes else 7"/>
-						<table class="table  table-sm mt8" t-attf-style="color:{{style.text_color}};" >
+						<table class="table  table-sm mt-4" t-attf-style="color:{{style.text_color}};" >
 								<thead t-attf-style="background-color:transparent; page-break-inside: avoid; color:style.text_color;">
 										<tr t-attf-style="page-break-inside: avoid !important; border-bottom: 1px solid {{style.text_color}} !important;font-size:{{int(style.body_font)+2}}px;">
 												<th t-attf-style="{{th_style}}"> Pos</th>

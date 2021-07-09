@@ -20,7 +20,7 @@
 												<!-- <div class="col-1 float-left"/> -->
 												<div  class="col-12 float-left">
 														<t t-call="professional_templates.company_address"/>
-														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-left:15px; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb8">
+														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="display:inline-block; width:auto; padding-left:15px; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="mb-4">
 																<span t-if="company.twitter" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/> &#160;
 																<span t-if="company.facebook" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/> &#160; 
 																<span t-if="company.youtube" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube"/> 
@@ -37,7 +37,7 @@
 										<img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
 								</div>
 								<t t-set="div_class" t-value="'col-4'"></t>
-								<div t-attf-class="#{div_class}  float-left mb8">
+								<div t-attf-class="#{div_class}  float-left mb-4">
 										<span t-if="o.picking_type_id.code=='outgoing' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Customer Address:</span>
 										<span t-if="o.picking_type_id.code=='internal' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Warehouse Address:</span>
 										<span t-if="o.picking_type_id.code=='incoming' and o.partner_id" t-attf-style="font-size:{{int(style.body_font)+6}}px; font-weight:bold;">Vendor Address:</span>
@@ -66,7 +66,7 @@
 														t-options='{"widget": "contact", "fields": ["address", "name", "phone",  "email", "website"]}'/>
 										</t>
 								</div>
-								<div t-attf-class="#{div_class} float-right mt8">
+								<div t-attf-class="#{div_class} float-right mt-4">
 										<ul> 
 												<div t-if="o.name">
 														<strong style="white-space:nowrap;">Picking Slip # </strong>

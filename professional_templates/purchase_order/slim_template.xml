@@ -11,27 +11,27 @@
 						</t>
 						<div class="header col-12" t-attf-style="padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.text_color}} !important;font-size:{{int(style.header_font)}}px !important;font-family:{{style.font_family}} !important;">
 								<t t-if="style.header">
-										<div class="col-12 mb8">
-												<div t-attf-class="mt32 #{'col-4 float-left' if o.name else 'col-6 float-left'}" t-attf-style="padding-left:0px;color:{{style.theme_color}};">
+										<div class="col-12 mb-4">
+												<div t-attf-class="mt-4 #{'col-4 float-left' if o.name else 'col-6 float-left'}" t-attf-style="padding-left:0px;color:{{style.theme_color}};">
 														<h2>
 																<span t-if="o.state not in ['draft']" style="white-space:nowrap;">P.O</span>
 																<span t-if="o.state in ['draft']" style="white-space:nowrap;">R.F.Q</span>
 														</h2>
 												</div>
-												<div t-if="o.name" class="col-3 float-left mt32 text-center" style="padding-left:0px;">
+												<div t-if="o.name" class="col-3 float-left mt-4 text-center" style="padding-left:0px;">
 														<h2 t-attf-style="background-color:{{style.theme_color}}; color:{{style.theme_txt_color}};display: inline-block;padding-left:4px;padding-right:4px;" t-field="o.name"/>
 												</div>
 												<div class="col-5 float-right text-right" style="padding-right:0px;">
 														<span t-if="style.logo">
-																<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
 														<span t-if="not style.logo and company.logo">
-																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
 														<span t-if="not style.logo and not company.logo">
-																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;"/>
+																<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;"/>
 														</span>
-														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:0px; padding-top:4px; padding-bottom:2px;" class="float-right mb8">
+														<div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:0px; padding-top:4px; padding-bottom:2px;" class="float-right mb-4">
 																<span t-if="company.twitter" style="padding-left:2px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
 																<span t-if="company.facebook" style="padding-left:2px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
 																<span t-if="company.youtube" style="padding-left:2px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />

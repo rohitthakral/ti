@@ -13,13 +13,13 @@
 								<t t-if="style.header">
 										<div class="col-7 float-right" style="padding-bottom:10px; text-align:right; padding-left:0px; padding-right:0px;">
 												<div t-if="style.logo" style="width:100%; text-align:right; padding-bottom:8px;">
-														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="max-width: 100% !important;" />
+														<img  t-att-src="image_data_uri(style.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;" />
 												</div>
 												<div t-if="not style.logo and company.logo" style="width:100%; text-align:right;padding-bottom:8px;">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;" />
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;" />
 												</div>
 												<div t-if="not style.logo and not company.logo" style="width:100%;text-align:right;padding-bottom:8px;">
-														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-width: 100% !important;" />
+														<img  t-att-src="image_data_uri(company.logo)" alt="Logo" style="width: 165px !important;height: 152px !important;" />
 												</div>
 												<div t-if="company.twitter or company.facebook or company.youtube" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:0px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:2px; padding-bottom:2px;" class="float-right">
 														<div t-if="company.twitter" style="padding-left:3px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -27,7 +27,7 @@
 														<div t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 												</div>
 										</div>
-										<div class="col-5 mb8 float-left" style="padding-bottom:2px;padding-left:0px;">
+										<div class="col-5 mb-4 float-left" style="padding-bottom:2px;padding-left:0px;">
 												<t t-call="professional_templates.company_address"/>
 										</div>
 								</t>
@@ -83,7 +83,7 @@
 										</div>
 
 								</div> <!--end of wrapper2-->
-								<div class="col-12 mt8 mb8" t-attf-style="padding-left:0px; padding-right:0px;">
+								<div class="col-12 mt-4 mb-4" t-attf-style="padding-left:0px; padding-right:0px;">
 								</div>
 								<!-- DATA-->
 								<t t-call="professional_templates.rfq_lines"/>

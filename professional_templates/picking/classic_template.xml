@@ -27,7 +27,7 @@
 														<span t-if="company.youtube" style="padding-left:4px;" class="fa fa-youtube-square "/>&#160;<span t-field="company.youtube" />
 												</div>
 										</div>
-										<div class="col-4 mb8 float-right" style="padding-bottom:2px;padding-right:0px;">
+										<div class="col-4 mb-4 float-right" style="padding-bottom:2px;padding-right:0px;">
 												<div class="float-right" style="width:auto;padding-left:15px;">
 														<t t-call="professional_templates.company_address"/>
 												</div>
