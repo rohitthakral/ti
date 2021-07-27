@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="ti_custom_header" inherit_id="web.external_layout_standard">
+            <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
+                <div class="header o_company_#{company.id}_layout row">
+                    <div class="col-5">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px;" alt="Logo"/>
+                    </div>
+                    <div class="col-7 float-right text-muted" style="font-size:14px;">
+                        <div class="row mb-1">
+                            <div class="col-11 text-right">
+                                <span t-if="company.partner_id.street" t-field="company.partner_id.street"/>
+                                <t t-if="company.partner_id.street2">, <span t-field="company.partner_id.street2"/></t>
+                                <t t-if="company.partner_id.city">, <span t-field="company.partner_id.city"/></t>
+                                <t t-if="company.partner_id.state_id">, <span t-field="company.partner_id.state_id"/></t>
+                                <t t-if="company.partner_id.zip">, <br/><span t-field="company.partner_id.zip"/></t>
+                                <t t-if="company.partner_id.country_id">, <span t-field="company.partner_id.country_id"/></t>
+                            </div>
+                            <div class="col-1 text-right">
+                                <i class="fa fa-map-marker" style="color:#196D6C; font-size:20px;"/>
+                            </div>
+                        </div>
+                        <div t-if="company.phone" class="row mb-1">
+                            <div class="col-11 text-right">
+                                <span t-field="company.phone"/>
+                            </div>
+                            <div class="col-1 text-right">
+                                <i class="fa fa-phone" style="color:#196D6C; font-size:20px;"/>
+                            </div>
+                        </div>
+                        <div t-if="company.website" class="row mb-1">
+                            <div class="col-11 text-right">
+                                <span t-field="company.website"/>
+                            </div>
+                            <div class="col-1 text-right">
+                                <i class="fa fa-link" style="color:#196D6C; font-size:20px;"/>
+                            </div>
+                        </div>
+                        <div t-if="company.email" class="row mb-1">
+                            <div class="col-11 text-right">
+                                <span t-field="company.email"/>
+                            </div>
+                            <div class="col-1 text-right">
+                                <i class="fa fa-envelope" style="color:#196D6C; font-size:20px;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[contains(@t-attf-class, 'article')]/div" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
+                <div class="footer" style="padding-top:50px">
+                    <div class="row mb-4">
+                        <div class="col-11" style="border-top:4px solid #0d786f;">
+                            <!-- <ul class="list-inline mb4">
+                                <li t-if="company.phone" class="list-inline-item d-inline"><span class="o_force_ltr" t-field="company.phone"/></li>
+                                <li t-if="company.email" class="list-inline-item d-inline"><span t-field="company.email"/></li>
+                                <li t-if="company.website" class="list-inline-item d-inline"><span t-field="company.website"/></li>
+                                <li t-if="company.vat" class="list-inline-item d-inline"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-field="company.vat"/></li>
+                            </ul> -->
+
+                            <div name="financial_infos" class="text-center">
+                                <span t-raw="company.report_footer"/>
+                            </div>
+
+                            <div t-if="report_type == 'pdf'" class="text-muted text-center" style="font-size:11px;">
+                                Page: <span class="page"/> / <span class="topage"/>
+                            </div>
+                        </div>
+                        <img src="/ti_report_templates/static/src/img/ti_footer_logo.png" class="col-1" style="position: relative;bottom: 50px;padding: 0px; max-height: 80px; max-width: 80px;"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="ti_report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[contains(@class, 'page')]/h2" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//div[@id='informations']" position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//div[@id='informations']" position="after">
+                <div class="row mt-4 py-3 m-0" style="border-top:4px solid #238277; border-bottom:4px solid #238277;background-color:#D0E0E3;font-family:Saira;">
+                    <div class="col-7 text-left">
+                        <strong style="font-size:25px;color:#196D6C;"><i class="fa fa-file-o mr-1"/>Invoice To:</strong>
+                        <div>
+                            <strong t-field="o.partner_id" style="color:#595661;"/>
+                            <div class="row font-weight-bold pl-3">
+                                <i class="fa fa-map-marker" style="color:#196D6C;"/>
+                                <div class="o_address_format col-11 text-left mx-0" style="color:#595661;">
+                                    <span t-field="o.partner_id.street"/>
+                                    <span t-field="o.partner_id.street2"/>
+                                    <br/>
+                                    <span t-field="o.partner_id.city"/>
+                                    <span t-field="o.partner_id.state_id"/>
+                                    <span t-field="o.partner_id.zip"/>
+                                    <br/>
+                                    <span t-field="o.partner_id.country_id"/>
+                                </div>
+                            </div>
+                            <div t-if="o.partner_id.phone" class="row pl-3">
+                                <i class="fa fa-phone" style="color:#196D6C;"/>
+                                <div class="col-11" style="color:#595661;">
+                                    <strong style="color:#595661;"><u><span t-field="o.partner_id.phone"/></u></strong>
+                                </div>
+                            </div>
+                            <div t-if="o.partner_id.email" class="row pl-3">
+                                <i class="fa fa-envelope" style="color:#196D6C;"/>
+                                <div class="col-11">
+                                    <a t-att-href="'mailto:' + o.partner_id.email">
+                                        <u><span t-field="o.partner_id.email"/></u>
+                                    </a>
+                                </div>
+                            </div>
+                            <div t-if="o.partner_id.website" class="row pl-3">
+                                <i class="fa fa-link" style="color:#196D6C;"/>
+                                <div class="col-11">
+                                    <a t-att-href="o.partner_id.website">
+                                        <u><span t-field="o.partner_id.website"/></u>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5" style="color:white;font-size:20px;">
+                        <div class="mb-2 p-2" style="background-color:#238277;">
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Invoice:</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Draft Invoice:</span>
+                            <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice:</span>
+                            <span t-if="o.move_type == 'out_refund'">Credit Note:</span>
+                            <span t-if="o.move_type == 'in_refund'">Vendor Credit Note:</span>
+                            <span t-if="o.move_type == 'in_invoice'">Vendor Bill:</span>
+                            <span t-if="o.name != '/'" t-field="o.name"/>
+                        </div>
+                        <div class="mb-1 p-2" style="background-color:#238277;">
+                            <div t-if="o.invoice_date">
+                                <span>Invoice Date: </span>
+                                <span t-field="o.invoice_date"/>
+                            </div>
+                            <div t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'">
+                                <span>Due Date:</span>
+                                <span t-field="o.invoice_date_due"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <!-- Applying changes in the table  -->
+            <xpath expr="//table[@name='invoice_line_table']" position="attributes">
+                <attribute name="style">margin-top:1.5rem;</attribute>
+            </xpath>
+
+            <xpath expr="//table[@name='invoice_line_table']/thead" position="attributes">
+                <attribute name="class">p-4</attribute>
+                <attribute name="style">font-weight:normal;color:white;background-color:#238277;</attribute>
+            </xpath>
+
+            <xpath expr="//th[@name='th_description']" position="before">
+                <th name="th_item">Item</th>
+            </xpath>
+            <xpath expr="//tbody[contains(@class, 'invoice_tbody')]/t" position="before">
+                <t t-set="item_count" t-value="0"/>
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_name']" position="before">
+                <td>
+                    <t t-set="item_count" t-value="item_count + 1"/>
+                    <span t-esc="item_count"/>
+                </td>
+            </xpath>
+
+            <xpath expr="//span[contains(@t-field,'o.amount_residual')]/../.." position="attributes">
+                <attribute name="style">display:none</attribute>
+            </xpath>
+            <xpath expr="//div[@id='total']//table" position="inside">
+                <tr class="border-black">
+                    <td><strong>Balance</strong></td>
+                    <td class="text-right">
+                        <span t-field="o.amount_residual"/>
+                    </td>
+                </tr>
+                <tr class="border-black">
+                    <td><strong>Payment Status</strong></td>
+                    <td class="text-right">
+                        <t t-if="o.payment_state == 'not_paid'"><span style="font-weight:bold;font-size: 100%;" t-field="o.payment_state" class="badge badge-danger rounded-0"/></t>
+                        <t t-if="o.payment_state == 'partial'"><span style="font-weight:bold;font-size: 100%;" t-field="o.payment_state" class="badge badge-warning rounded-0"/></t>
+                        <t t-if="o.payment_state == 'paid'"><span style="font-weight:bold;font-size: 100%;" t-field="o.payment_state" class="badge badge-success rounded-0"/></t>
+                    </td>
+                </tr>
+            </xpath>
+        </template>
+    </data>
+
+</odoo>
