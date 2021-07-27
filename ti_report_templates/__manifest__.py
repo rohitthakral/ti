@@ -10,10 +10,15 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base',
-        "account"
+        "account",
+        "sale",
+        "purchase"
     ],
     # always loaded
     'data': [
-        'invoice/ti_custom_invoice.xml'
+        'invoice/ti_custom_invoice.xml',
+        'sale_order/ti_custom_sale_order.xml',
+        'purchase_order/ti_custom_purchase_order.xml',
+        'purchase_order/ti_custom_rfq.xml'
     ]
 }

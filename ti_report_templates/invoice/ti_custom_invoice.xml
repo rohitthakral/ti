@@ -3,7 +3,7 @@
     <data>
         <template id="ti_custom_header" inherit_id="web.external_layout_standard">
             <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
-                <div class="header o_company_#{company.id}_layout row">
+                <div class="header o_company_#{company.id}_layout row border-bottom"> 
                     <div class="col-5">
                         <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px;" alt="Logo"/>
                     </div>

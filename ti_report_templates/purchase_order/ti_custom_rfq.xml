@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="ti_report_purchasequotation_document" inherit_id="purchase.report_purchasequotation_document">
+        <xpath expr="//h2" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+
+        <xpath expr="//h2" position="after">
+            <div class="row mt-4 py-3 m-0" style="border-top:4px solid #238277; border-bottom:4px solid #238277;background-color:#D0E0E3;font-family:Saira;">
+                <div class="col-6 text-left">
+                    <div>
+                        <strong t-field="o.partner_id" style="color:#595661;"/>
+                        <div class="row font-weight-bold pl-3">
+                            <i class="fa fa-map-marker" style="color:#196D6C;"/>
+                            <div class="o_address_format col-11 text-left mx-0" style="color:#595661;">
+                                <span t-field="o.partner_id.street"/>
+                                <span t-field="o.partner_id.street2"/>
+                                <br/>
+                                <span t-field="o.partner_id.city"/>
+                                <span t-field="o.partner_id.state_id"/>
+                                <span t-field="o.partner_id.zip"/>
+                                <br/>
+                                <span t-field="o.partner_id.country_id"/>
+                            </div>
+                        </div>
+                        <div t-if="o.partner_id.phone" class="row pl-3">
+                            <i class="fa fa-phone" style="color:#196D6C;"/>
+                            <div class="col-11" style="color:#595661;">
+                                <strong style="color:#595661;"><u><span t-field="o.partner_id.phone"/></u></strong>
+                            </div>
+                        </div>
+                        <div t-if="o.partner_id.email" class="row pl-3">
+                            <i class="fa fa-envelope" style="color:#196D6C;"/>
+                            <div class="col-11">
+                                <a t-att-href="'mailto:' + o.partner_id.email">
+                                    <u><span t-field="o.partner_id.email"/></u>
+                                </a>
+                            </div>
+                        </div>
+                        <div t-if="o.partner_id.website" class="row pl-3">
+                            <i class="fa fa-link" style="color:#196D6C;"/>
+                            <div class="col-11">
+                                <a t-att-href="o.partner_id.website">
+                                    <u><span t-field="o.partner_id.website"/></u>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6" style="color:white;font-size:20px;">
+                    <div class="mb-2 p-2" style="background-color:#238277;">
+                        <span>Request for Quotation #<span t-field="o.name"/></span>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <!-- Applyig changes in the table  -->
+        <xpath expr="//table[contains(@class,'table-sm')]" position="attributes">
+            <attribute name="style">margin-top:1.5rem;</attribute>
+        </xpath>
+
+        <xpath expr="//table[contains(@class,'table-sm')]/thead" position="attributes">
+            <attribute name="class">p-4</attribute>
+            <attribute name="style">font-weight:normal;color:white;background-color:#238277;</attribute>
+        </xpath>
+
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th name="th_item">Item</th>
+        </xpath>
+
+        <xpath expr="//table[contains(@class,'table-sm')]/tbody/t[1]" position="before">
+            <t t-set="item_count" t-value="0"/>
+        </xpath>
+
+        <xpath expr="//table[contains(@class,'table-sm')]/tbody//td[1]" position="before">
+            <td>
+                <t t-set="item_count" t-value="item_count + 1"/>
+                <span t-esc="item_count"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
