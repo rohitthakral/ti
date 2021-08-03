@@ -19,6 +19,7 @@
         'invoice/ti_custom_invoice.xml',
         'sale_order/ti_custom_sale_order.xml',
         'purchase_order/ti_custom_purchase_order.xml',
-        'purchase_order/ti_custom_rfq.xml'
+        'purchase_order/ti_custom_rfq.xml',
+        'views/company_view.xml',
     ]
 }
