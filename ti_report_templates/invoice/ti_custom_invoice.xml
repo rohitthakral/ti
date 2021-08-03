@@ -124,6 +124,13 @@
                                     </a>
                                 </div>
                             </div>
+                            <div t-if="o.partner_id.vat" class="row pl-3 font-weight-bold" style="color:#595661;">
+                                <i class="fa fa-info-circle" style="color:#196D6C;"/>
+                                <div class="col-11">
+                                    <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                                    <t t-else="">Tax ID</t>: <span t-field="o.partner_id.vat"/>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                     <div class="col-5" style="color:white;font-size:20px;">
@@ -144,6 +151,10 @@
                             <div t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'">
                                 <span>Due Date:</span>
                                 <span t-field="o.invoice_date_due"/>
+                            </div>
+                            <div t-if="o.ref">
+                                <span>Customer Reference:</span>
+                                <span t-field="o.ref"/>
                             </div>
                         </div>
                     </div>
@@ -191,7 +202,11 @@
                     </td>
                 </tr>
             </xpath>
+            <xpath expr="//div[contains(@class, 'page')]" position="inside">
+                <div t-if="o.company_id and o.company_id.stamp_image" class="col">
+                    <img t-if="o.company_id.stamp_image" t-att-src="image_data_uri(o.company_id.stamp_image)" style="max-height: 230px;" alt="Logo" class="pull-right"/>
+                </div>
+            </xpath>
         </template>
     </data>
-
 </odoo>
